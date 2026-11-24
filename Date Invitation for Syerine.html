@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Date Invitation for Syerine</title>
+<style>
+:root{--bg:#f6ecee;--card:#fffaf6;--ink:#4a1626;--muted:#7d5560;--gold:#b88a3e;--accent:#8c1d3b;--accent-ink:#fff;--line:#e3cfa3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0a12;--card:#2b1019;--ink:#f7e9ec;--muted:#cba8b1;--gold:#d9b56a;--accent:#d6455f;--accent-ink:#fff;--line:#6b4a3a}}
+:root[data-theme="dark"]{--bg:#1d0a12;--card:#2b1019;--ink:#f7e9ec;--muted:#cba8b1;--gold:#d9b56a;--accent:#d6455f;--accent-ink:#fff;--line:#6b4a3a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+.card{width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.15);position:relative}
+.card::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold);border-radius:14px;pointer-events:none;opacity:.7}
+.crown{font-size:42px}
+.small{letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--gold);margin:8px 0}
+h1{font-size:34px;margin:6px 0 4px;font-weight:normal;font-style:italic}
+.to{font-size:20px;color:var(--accent);margin:0 0 20px}
+.rule{height:1px;background:var(--line);margin:18px auto;width:60%}
+p{line-height:1.6;color:var(--muted);margin:10px 0}
+.show{font-size:22px;color:var(--ink);margin:6px 0}
+.time{font-size:30px;color:var(--ink);margin:4px 0}
+.time small{display:block;font-size:14px;color:var(--muted);letter-spacing:.05em}
+.btns{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;min-height:52px}
+button{font-family:inherit;font-size:16px;border-radius:999px;padding:12px 22px;cursor:pointer;border:1px solid var(--accent)}
+.yes{background:var(--accent);color:var(--accent-ink)}
+.no{background:transparent;color:var(--accent);position:relative;transition:transform .15s}
+#reply{margin-top:18px;font-size:18px;color:var(--accent);min-height:28px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="crown">👑</div>
+  <div class="small">You’re invited</div>
+  <h1>A Long-Distance Date Night</h1>
+  <div class="to">for Syerine Cantik</div>
+  <div class="rule"></div>
+  <p>Her Majesty is requested to join me tonight for a movie date, together even though we’re far apart, watching</p>
+  <div class="show">“Remarried Empress”</div>
+  <div class="rule"></div>
+  <div class="time">Tonight, 20.00<small>until the very last episode ends</small></div>
+  <p>Grab your favorite snack, get comfy, and press play with me. Same show, same time, one heart. 💕</p>
+  <div class="btns">
+    <button class="yes" id="yes">Yes, I’ll come 💕</button>
+    <button class="no" id="no">No</button>
+  </div>
+  <div id="reply"></div>
+</main>
+<script>
+var yes=document.getElementById('yes'),no=document.getElementById('no'),reply=document.getElementById('reply');
+yes.onclick=function(){reply.textContent='See you tonight at 20.00, my empress! 👑💕';no.style.display='none'};
+function dodge(){var x=(Math.random()-.5)*120,y=(Math.random()-.5)*60;no.style.transform='translate('+x+'px,'+y+'px)';reply.textContent='Hmm, that button seems broken… 😏'}
+no.addEventListener('mouseenter',dodge);no.addEventListener('click',dodge);no.addEventListener('touchstart',function(e){e.preventDefault();dodge()});
+</script>
+</body>
+</html>
